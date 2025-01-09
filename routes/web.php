@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,3 +29,8 @@ Route::get('/panel/tasks/create',[TaskController::class ,'createPage'])->name('p
 Route::post('/panel/tasks/add',[TaskController::class ,'addTask'])->name('panel.addTask');
 
     //task routeları end
+
+//kategori routes start
+Route::get('panel/categories/index',[CategoryController::class,'index'])->name('panel.categories');
+
+//kategori routes end
