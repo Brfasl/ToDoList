@@ -14,4 +14,10 @@ class CategoryController extends Controller
         return view('panel.categories.index',compact('categories'));
 
     }
+
+    public function createPage(){
+
+        return view('panel.categories.create');
+
+    }
 }

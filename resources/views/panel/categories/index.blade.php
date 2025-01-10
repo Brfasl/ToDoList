@@ -5,7 +5,9 @@
     <div class="card p-3">
         <div class="card-header">
         <h3>Kategoriler</h3>
-        <button class="btn btn-sm btn-success">Kategori Oluştur</button>
+            <a href="{{route('panel.categoryCreatePage')}}" class="btn btn-sm btn-success">Yeni Kategori Oluştur</a>
+
+
         </div>
 
         <div class="card-body">
