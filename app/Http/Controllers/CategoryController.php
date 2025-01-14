@@ -20,4 +20,9 @@ class CategoryController extends Controller
         return view('panel.categories.create');
 
     }
+    public function postCategory(Request $request){
+        dd($request->all());
+
+    }
 }
+

@@ -7,17 +7,19 @@
         <h3>Kategori Oluştur</h3>
     </div>
     <div class="card-body">
-        <form action="">
+        <form action="{{route('panel.categoryAdd')}}" method="POST">
+            @csrf
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Kategori Adı :</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Lütfen Kategori Adı Giriniz.">
+                <input type="text" class="form-control" placeholder="Lütfen Kategori Adı Giriniz." name="category_name">
 
-                <label for="exampleFormControlInput1" class="form-label">Kategori Durumu :</label>
-                <select name="" id="" class="form-control">
-                    <option value="">Aktif</option>
-                    <option value="">Pasif</option>
+                <label for="exampleFormControlInput1" class="form-label mt-3">Kategori Durumu :</label>
+                <select name="category_status" id="" class="form-control">
+                    <option value="1">Aktif</option>
+                    <option value="0">Pasif</option>
                 </select>
             </div>
+            <button type="submit" class="btn btn-info">Kaydet</button>
         </form>
 
     </div>
