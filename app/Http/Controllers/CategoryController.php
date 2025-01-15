@@ -21,7 +21,12 @@ class CategoryController extends Controller
 
     }
     public function postCategory(Request $request){
-        dd($request->all());
+        $cat=new Category();
+        $cat->name = $request->category_name;
+        $cat->is_active = $request->category_status;
+        $cat->save();
+
+        return redirect() -> route('panel.categoryIndex')->with(['success' => 'Kategori başarıyla oluşturuldu.']);
 
     }
 }
