@@ -22,6 +22,8 @@
                 <h5 class="card-header">Kategori Listesi</h5>
                 <p class="ms-5">Kategori listesi aşağıdaki tabloda bulunmaktadır.</p>
                 <div class="table-responsive text-nowrap">
+                    @if($categories->first())
+
                     <table class="table">
                         <thead>
                         <tr>
@@ -54,6 +56,11 @@
                         @endforeach
                         </tbody>
                     </table>
+                    @else
+                    <p>Henüz hiç kategori oluşturmadınız.</p>
+                    @endif
+
+
                 </div>
             </div>
         </div>
