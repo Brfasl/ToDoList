@@ -21,7 +21,7 @@ Route::get('/', function () {
 
 //test routes
 Route::get('/test', function () {
-    return view('panel.layout.app');
+
 });
 
 //task routeları start
