@@ -29,5 +29,10 @@ class CategoryController extends Controller
         return redirect() -> route('panel.categoryIndex')->with(['success' => 'Kategori başarıyla oluşturuldu.']);
 
     }
+    public function updatePage(){
+
+        return view('panel.categories.update');
+    }
+
 }
 

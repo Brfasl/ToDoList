@@ -48,7 +48,7 @@
                                     {{$k->created_at}}
                                 </td>
                                 <td>
-                                    <button>Güncelle</button>
+                                    <a href="{{route('panel.categoryUpdatePage',$k->id)}}" class="btn btn-info">Güncelle</a>
                                     <button>Sil</button>
                                 </td>
                             </tr>
