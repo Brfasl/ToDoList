@@ -9,10 +9,21 @@
 
             <h3>Kategori Güncelle</h3>
 
-            <p> Kategori Adı :</p>
-            <p> Kategori Durumu :</p>
-
         </div>
+
+        <form action="">
+            @csrf
+            <label for="">Kategori Adı :</label>
+            <input type="text" class="form-control" value="{{$category->name}}">
+
+            <label for="">Kategori Durumu :</label>
+            <select name="" id="" class="form-control">
+            <option value="1" @if($category->is_active==1)selected @endif>Aktif</option>
+            <option value="0" @if($category->is_active==0)selected @endif>Pasif</option>
+            </select>
+
+            <button type="submit" class="btn btn-success mt-3">Güncelle</button>
+        </form>
     </div>
 
 

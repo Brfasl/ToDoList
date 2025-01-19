@@ -29,9 +29,16 @@ class CategoryController extends Controller
         return redirect() -> route('panel.categoryIndex')->with(['success' => 'Kategori başarıyla oluşturuldu.']);
 
     }
-    public function updatePage(){
+    public function updatePage($a){
+        //where('sutunAdi','neAraniyor')
 
-        return view('panel.categories.update');
+        //$category=Category::where('id',$a)->first(); DOĞRU
+        //$category=Category::where('id',$a)->get();  YANLIŞ veritabanın tamamını tarar.
+        $category=Category::find($a);//firstün kısaltılmışı
+
+
+        return view('panel.categories.update',compact('category'));
+
     }
 
 }
