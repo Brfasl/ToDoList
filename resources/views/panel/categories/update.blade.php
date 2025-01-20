@@ -11,13 +11,13 @@
 
         </div>
 
-        <form action="">
+        <form action="{{route('panel.updateCategory')}}" , method="POST">
             @csrf
             <label for="">Kategori Adı :</label>
-            <input type="text" class="form-control" value="{{$category->name}}">
+            <input type="text" class="form-control" name="catName" value="{{$category->name}}">
 
             <label for="">Kategori Durumu :</label>
-            <select name="" id="" class="form-control">
+            <select name="catStatus" id="" class="form-control">
             <option value="1" @if($category->is_active==1)selected @endif>Aktif</option>
             <option value="0" @if($category->is_active==0)selected @endif>Pasif</option>
             </select>

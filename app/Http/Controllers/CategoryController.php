@@ -40,6 +40,10 @@ class CategoryController extends Controller
         return view('panel.categories.update',compact('category'));
 
     }
+    public function updateCategory(Request $request)
+    {
+
+    }
 
 }
 
