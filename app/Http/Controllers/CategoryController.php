@@ -42,7 +42,13 @@ class CategoryController extends Controller
     }
     public function updateCategory(Request $request)
     {
+       // dd($request->all());
+        $category=Category::find($request->catID);
+        $category->name=$request->catName;
+        $category->is_active=$request->catStatus;
+        $category->save();
 
+        return redirect() -> route('panel.categoryIndex')->with(['success' => 'Kategori başarıyla güncellendi.']);
     }
 
 }

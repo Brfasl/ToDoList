@@ -13,6 +13,8 @@
 
         <form action="{{route('panel.updateCategory')}}" , method="POST">
             @csrf
+
+            <input type="hidden" value="{{$category->id}}" name="catID">
             <label for="">Kategori Adı :</label>
             <input type="text" class="form-control" name="catName" value="{{$category->name}}">
 
