@@ -36,5 +36,8 @@ Route::get('panel/categories/createPage',[CategoryController::class,'createPage'
 Route::post('panel/categories/addCategory',[CategoryController::class,'postCategory'])->name('panel.categoryAdd');
 Route::get('panel/categories/update/{id}',[CategoryController::class, 'updatePage'])->name('panel.categoryUpdatePage');//slug
 Route::post('panel/categories/updatePost',[CategoryController::class, 'updateCategory'])->name('panel.updateCategory');
+//parametreli form post
+Route::post('panel/categories/updatePostTest/{id}',[CategoryController::class, 'updateCategoryTest'])->name('panel.updateCategoryTest');
+
 
 //kategori routes end

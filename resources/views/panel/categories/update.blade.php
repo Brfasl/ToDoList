@@ -11,10 +11,11 @@
 
         </div>
 
-        <form action="{{route('panel.updateCategory')}}" , method="POST">
+        <form action="{{route('panel.updateCategoryTest',$category->id)}}"  method="POST">
             @csrf
 
-            <input type="hidden" value="{{$category->id}}" name="catID">
+            <!--<input type="hidden" value="{{$category->id}}" name="catID">
+            -->
             <label for="">Kategori Adı :</label>
             <input type="text" class="form-control" name="catName" value="{{$category->name}}">
 
