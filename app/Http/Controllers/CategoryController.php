@@ -43,16 +43,30 @@ class CategoryController extends Controller
     public function updateCategory(Request $request)
     {
        // dd($request->all());
-        $category=Category::find($request->catID);
-        $category->name=$request->catName;
-        $category->is_active=$request->catStatus;
-        $category->save();
 
-        return redirect() -> route('panel.categoryIndex')->with(['success' => 'Kategori başarıyla güncellendi.']);
+        $request->validate([
+            'catStatus' => 'min:0|max:1',
+            'catName' => 'min:3|max:50',
+        ]);
+        $category=Category::find($request->catID);
+        if ($category!=null) {
+            $category->name=$request->catName;
+            $category->is_active=$request->catStatus;
+            $category->save();
+
+            return redirect() -> route('panel.categoryIndex')->with(['success' => 'Kategori başarıyla güncellendi.']);
+
+        }
+        else{
+            return redirect() -> route('panel.categoryIndex')->with(['error' => 'Bir hata oluştu! Lütfen tekrar deneyiniz.']);
+        }
+
     }
-    public function updateCategoryTest($id)
+    public function updateCategoryTest($id,Request $request)
     {
-        dd($id);
+        dd($id ,$request->all());
+
+        $category=Category::find($id);
     }
 
 }
