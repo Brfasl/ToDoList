@@ -58,7 +58,7 @@ class CategoryController extends Controller
 
         }
         else{
-            return redirect() -> route('panel.categoryIndex')->with(['error' => 'Bir hata oluştu! Lütfen tekrar deneyiniz.']);
+            return redirect() -> route('panel.categoryIndex')->with(['errors' => 'Bir hata oluştu! Lütfen tekrar deneyiniz.']);
         }
 
     }
