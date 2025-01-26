@@ -46,7 +46,7 @@ class CategoryController extends Controller
 
         $request->validate([
             'catStatus' => 'min:0|max:1',
-            'catName' => 'min:3|max:50',
+            'catName' => 'min:3|max:50|required'
         ]);
         $category=Category::find($request->catID);
         if ($category!=null) {
