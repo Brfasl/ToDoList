@@ -12,6 +12,13 @@
         </div>
 
         <div class="card-body">
+
+            @if(session('success'))
+                <div class="alert alert-success alert-dismissible" role="alert">
+                    {{session('success')}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
             <div class="card">
                 <h5 class="card-header">Kategori Listesi</h5>
                 <p class="ms-5">Kategori listesi aşağıdaki tabloda bulunmaktadır.</p>
@@ -39,11 +46,11 @@
                                     @endif
                                 </td>
                                 <td>
-                                    {{$k->created_at}}
+                                    {{$k->created_at->diffForHumans()}}
                                 </td>
                                 <td>
                                     <a href="{{route('panel.categoryUpdatePage',$k->id)}}" class="btn btn-info">Güncelle</a>
-                                    <button>Sil</button>
+                                    <a href="{{route('panel.categoryDelete',$k->id)}}" class="btn btn-danger">Sil</a>
                                 </td>
                             </tr>
 

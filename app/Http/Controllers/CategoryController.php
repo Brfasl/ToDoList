@@ -69,5 +69,19 @@ class CategoryController extends Controller
         $category=Category::find($id);
     }
 
+    public function categoryDelete($id){
+        $category=Category::find($id);
+        if ($category ->deleted_at ==null) {
+            $category->delete();
+            return redirect() -> route('panel.categoryIndex')->with(['success' => 'Kategori başarıyla silindi.']);
+        }else{
+            return redirect() -> route('panel.categoryIndex')->with(['error' => 'Hata oluştu!']);
+        }
+
+
+
+
+    }
+
 }
 

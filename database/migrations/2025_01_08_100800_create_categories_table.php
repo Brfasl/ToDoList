@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->boolean('is_active')->default(1)-> comment('0-inaktif, 1-aktif');
+            $table->timestamp('deleted_at')->nullable()->comment('Silinme tarihi'); // Buraya eklendi
             $table->timestamps();
         });
     }
