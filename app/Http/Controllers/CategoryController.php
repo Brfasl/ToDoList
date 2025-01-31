@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CategoryController extends Controller
 {
     public function index(){
 
-        $categories = Category::get();
+        $categories = Category::where('user_id', Auth::id())->get();
 
         return view('panel.categories.index',compact('categories'));
 
@@ -24,6 +25,10 @@ class CategoryController extends Controller
         $cat=new Category();
         $cat->name = $request->category_name;
         $cat->is_active = $request->category_status;
+        //dd(Auth::user());
+        //dd(Auth::id());
+        // dd(Auth::check());//kişi auth olmuş mu?
+        $cat->user_id = Auth::id();;
         $cat->save();
 
         return redirect() -> route('panel.categoryIndex')->with(['success' => 'Kategori başarıyla oluşturuldu.']);

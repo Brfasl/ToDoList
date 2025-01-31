@@ -42,3 +42,13 @@ Route::post('panel/categories/updatePostTest/{id}',[CategoryController::class, '
 
 Route::get('panel/categories/deleteCategory/{id}',[CategoryController::class, 'categoryDelete'])->name('panel.categoryDelete');
 //kategori routes end
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
