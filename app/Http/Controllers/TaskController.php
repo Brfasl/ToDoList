@@ -22,13 +22,14 @@ class TaskController extends Controller
         ]);
 
         $task =new Task();
-        dd($task);
         $task->category_id=1;
         $task->title = $req->title;
-        $task->conted = $req->content;
+        $task->content = $req->content;
         $task->status = $req->status;
         $task->deadline = $req->deadline;
         $task->save();
+
         return 'başarılı';
+
     }
 }

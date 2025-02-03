@@ -144,92 +144,13 @@
                 <li class="menu-item active">
                     <a href="index.html" class="menu-link">
                         <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                        <div data-i18n="Analytics">Dashboard</div>
+                        <div data-i18n="Analytics">Ana Sayfa</div>
                     </a>
                 </li>
 
-                <!-- Layouts -->
-                <li class="menu-item">
-                    <a href="javascript:void(0);" class="menu-link menu-toggle">
-                        <i class="menu-icon tf-icons bx bx-layout"></i>
-                        <div data-i18n="Layouts">Layouts</div>
-                    </a>
 
-                    <ul class="menu-sub">
-                        <li class="menu-item">
-                            <a href="layouts-without-menu.html" class="menu-link">
-                                <div data-i18n="Without menu">Without menu</div>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="layouts-without-navbar.html" class="menu-link">
-                                <div data-i18n="Without navbar">Without navbar</div>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="layouts-container.html" class="menu-link">
-                                <div data-i18n="Container">Container</div>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="layouts-fluid.html" class="menu-link">
-                                <div data-i18n="Fluid">Fluid</div>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="layouts-blank.html" class="menu-link">
-                                <div data-i18n="Blank">Blank</div>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="menu-header small text-uppercase">
-                    <span class="menu-header-text">Pages</span>
-                </li>
-                <li class="menu-item">
-                    <a href="javascript:void(0);" class="menu-link menu-toggle">
-                        <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
-                        <div data-i18n="Authentications">Authentications</div>
-                    </a>
-                    <ul class="menu-sub">
-                        <li class="menu-item">
-                            <a href="auth-login-basic.html" class="menu-link" target="_blank">
-                                <div data-i18n="Basic">Login</div>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="auth-register-basic.html" class="menu-link" target="_blank">
-                                <div data-i18n="Basic">Register</div>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="auth-forgot-password-basic.html" class="menu-link" target="_blank">
-                                <div data-i18n="Basic">Forgot Password</div>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="menu-item">
-                    <a href="javascript:void(0);" class="menu-link menu-toggle">
-                        <i class="menu-icon tf-icons bx bx-cube-alt"></i>
-                        <div data-i18n="Misc">Misc</div>
-                    </a>
-                    <ul class="menu-sub">
-                        <li class="menu-item">
-                            <a href="pages-misc-error.html" class="menu-link">
-                                <div data-i18n="Error">Error</div>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="pages-misc-under-maintenance.html" class="menu-link">
-                                <div data-i18n="Under Maintenance">Under Maintenance</div>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
                 <!-- Components -->
-                <li class="menu-header small text-uppercase"><span class="menu-header-text">Components</span></li>
+                <li class="menu-header small text-uppercase"><span class="menu-header-text">Sayfalar</span></li>
                 <!-- Cards -->
                 <li class="menu-item">
                     <a href="{{route('panel.categoryIndex')}}" class="menu-link">
@@ -241,7 +162,7 @@
                 <li class="menu-item">
                     <a href="javascript:void(0)" class="menu-link menu-toggle">
                         <i class="menu-icon tf-icons bx bx-box"></i>
-                        <div data-i18n="User interface">User interface</div>
+                        <div data-i18n="User interface">Tasklar</div>
                     </a>
                     <ul class="menu-sub">
                         <li class="menu-item">
@@ -342,101 +263,7 @@
                     </ul>
                 </li>
 
-                <!-- Extended components -->
-                <li class="menu-item">
-                    <a href="javascript:void(0)" class="menu-link menu-toggle">
-                        <i class="menu-icon tf-icons bx bx-copy"></i>
-                        <div data-i18n="Extended UI">Extended UI</div>
-                    </a>
-                    <ul class="menu-sub">
-                        <li class="menu-item">
-                            <a href="extended-ui-perfect-scrollbar.html" class="menu-link">
-                                <div data-i18n="Perfect Scrollbar">Perfect scrollbar</div>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="extended-ui-text-divider.html" class="menu-link">
-                                <div data-i18n="Text Divider">Text Divider</div>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
 
-                <li class="menu-item">
-                    <a href="icons-boxicons.html" class="menu-link">
-                        <i class="menu-icon tf-icons bx bx-crown"></i>
-                        <div data-i18n="Boxicons">Boxicons</div>
-                    </a>
-                </li>
-
-                <!-- Forms & Tables -->
-                <li class="menu-header small text-uppercase"><span class="menu-header-text">Forms &amp; Tables</span></li>
-                <!-- Forms -->
-                <li class="menu-item">
-                    <a href="javascript:void(0);" class="menu-link menu-toggle">
-                        <i class="menu-icon tf-icons bx bx-detail"></i>
-                        <div data-i18n="Form Elements">Form Elements</div>
-                    </a>
-                    <ul class="menu-sub">
-                        <li class="menu-item">
-                            <a href="forms-basic-inputs.html" class="menu-link">
-                                <div data-i18n="Basic Inputs">Basic Inputs</div>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="forms-input-groups.html" class="menu-link">
-                                <div data-i18n="Input groups">Input groups</div>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="menu-item">
-                    <a href="javascript:void(0);" class="menu-link menu-toggle">
-                        <i class="menu-icon tf-icons bx bx-detail"></i>
-                        <div data-i18n="Form Layouts">Form Layouts</div>
-                    </a>
-                    <ul class="menu-sub">
-                        <li class="menu-item">
-                            <a href="form-layouts-vertical.html" class="menu-link">
-                                <div data-i18n="Vertical Form">Vertical Form</div>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="form-layouts-horizontal.html" class="menu-link">
-                                <div data-i18n="Horizontal Form">Horizontal Form</div>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <!-- Tables -->
-                <li class="menu-item">
-                    <a href="tables-basic.html" class="menu-link">
-                        <i class="menu-icon tf-icons bx bx-table"></i>
-                        <div data-i18n="Tables">Tables</div>
-                    </a>
-                </li>
-                <!-- Misc -->
-                <li class="menu-header small text-uppercase"><span class="menu-header-text">Misc</span></li>
-                <li class="menu-item">
-                    <a
-                        href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
-                        target="_blank"
-                        class="menu-link"
-                    >
-                        <i class="menu-icon tf-icons bx bx-support"></i>
-                        <div data-i18n="Support">Support</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a
-                        href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
-                        target="_blank"
-                        class="menu-link"
-                    >
-                        <i class="menu-icon tf-icons bx bx-file"></i>
-                        <div data-i18n="Documentation">Documentation</div>
-                    </a>
-                </li>
             </ul>
         </aside>
         <!-- / Menu -->
@@ -471,78 +298,8 @@
                     <!-- /Search -->
 
                     <ul class="navbar-nav flex-row align-items-center ms-auto">
-                        <!-- Place this tag where you want the button to render. -->
-                        <li class="nav-item lh-1 me-3">
-                            <a
-                                class="github-button"
-                                href="https://github.com/themeselection/sneat-html-admin-template-free"
-                                data-icon="octicon-star"
-                                data-size="large"
-                                data-show-count="true"
-                                aria-label="Star themeselection/sneat-html-admin-template-free on GitHub"
-                            >Star</a
-                            >
-                        </li>
 
-                        <!-- User -->
-                        <li class="nav-item navbar-dropdown dropdown-user dropdown">
-                            <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
-                                <div class="avatar avatar-online">
-                                    <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
-                                </div>
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end">
-                                <li>
-                                    <a class="dropdown-item" href="#">
-                                        <div class="d-flex">
-                                            <div class="flex-shrink-0 me-3">
-                                                <div class="avatar avatar-online">
-                                                    <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
-                                                </div>
-                                            </div>
-                                            <div class="flex-grow-1">
-                                                <span class="fw-semibold d-block">John Doe</span>
-                                                <small class="text-muted">Admin</small>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <div class="dropdown-divider"></div>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">
-                                        <i class="bx bx-user me-2"></i>
-                                        <span class="align-middle">My Profile</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">
-                                        <i class="bx bx-cog me-2"></i>
-                                        <span class="align-middle">Settings</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">
-                        <span class="d-flex align-items-center align-middle">
-                          <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
-                          <span class="flex-grow-1 align-middle">Billing</span>
-                          <span class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
-                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <div class="dropdown-divider"></div>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="auth-login-basic.html">
-                                        <i class="bx bx-power-off me-2"></i>
-                                        <span class="align-middle">Log Out</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <!--/ User -->
+
                     </ul>
                 </div>
             </nav>
