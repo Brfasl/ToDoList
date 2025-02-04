@@ -18,6 +18,7 @@ class CategoryController extends Controller
 
     public function createPage(){
 
+
         return view('panel.categories.create');
 
     }

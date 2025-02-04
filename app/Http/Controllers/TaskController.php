@@ -9,7 +9,9 @@ use Illuminate\Http\Request;
 class TaskController extends Controller
 {
     public function createPage(){
-        return view('panel.tasks.create');
+        $categories = Category::where('user_id',Auth::user()->id)->get();
+
+        return view('panel.tasks.create',compact('categories'));
 
     }
     public  function addTask(Request $req)
@@ -22,7 +24,7 @@ class TaskController extends Controller
         ]);
 
         $task =new Task();
-        $task->category_id=1;
+        $task->category_id= $req->category;
         $task->title = $req->title;
         $task->content = $req->content;
         $task->status = $req->status;
