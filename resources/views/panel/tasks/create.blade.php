@@ -20,10 +20,10 @@
                 <input type="text" class="form-control" name="content">
 
                 <label for="defaultFormControlInput" class="form-label" >Kategori :</label>
-                <select name="status" id="" class="form-control" >
+                <select name="category" id="" class="form-control" >
                     <option  value="" disabled>Lütfen Seçim Yapınız</option>
-                    @foreach($kategoriler as $c)
-                        <option >{{$c->name}}</option>
+                    @foreach($categories as $c)
+                        <option value="{{$c->id}}">{{$c->name}}</option>
                     @endforeach
 
                 </select>
