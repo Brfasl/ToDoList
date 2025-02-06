@@ -27,6 +27,7 @@ Route::get('/test', function () {
 //task routeları start
 Route::get('/panel/tasks/create',[TaskController::class ,'createPage'])->name('panel.createTaskPage');
 Route::post('/panel/tasks/add',[TaskController::class ,'addTask'])->name('panel.addTask');
+Route::get('/panel/tasks/index',[TaskController::class ,'indexPage'])->name('panel.indexTask');
 
     //task routeları end
 

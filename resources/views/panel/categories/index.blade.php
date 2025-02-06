@@ -5,11 +5,8 @@
     <div class="card p-3">
         <div class="card-header">
 
-        <h3>Kategoriler</h3>
-            <a href="{{route('panel.categoryCreatePage')}}" class="btn btn-sm btn-success">Yeni Kategori Oluştur</a>
 
 
-        </div>
 
         <div class="card-body">
 
@@ -19,8 +16,23 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
-            <div class="card">
-                <h5 class="card-header">Kategori Listesi</h5>
+
+                @if(session('error'))
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        {{session('error')}}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
+
+
+                <h3>Kategoriler</h3>
+                <a href="{{route('panel.categoryCreatePage')}}" class="btn btn-sm btn-success">Yeni Kategori Oluştur</a>
+        </div>
+
+
+
+                <div class="card-body">
+                <h5 class="card">Kategori Listesi</h5>
                 <p class="ms-5">Kategori listesi aşağıdaki tabloda bulunmaktadır.</p>
                 <div class="table-responsive text-nowrap">
                     @if($categories->first())
@@ -70,5 +82,6 @@
         </table>
 
     </div>
+
 @endsection
 

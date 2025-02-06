@@ -33,7 +33,12 @@ class TaskController extends Controller
         $task->deadline = $req->deadline;
         $task->save();
 
-        return 'başarılı';
+        return redirect()->route('panel.indexTask')->with(['success','Görev başarıyla eklendi!']);
 
+    }
+    public function indexPage(){
+
+        $tasks = Task::get();
+        return view('panel.tasks.index');
     }
 }
