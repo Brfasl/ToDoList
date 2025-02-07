@@ -38,7 +38,8 @@ class TaskController extends Controller
     }
     public function indexPage(){
 
-        $tasks = Task::get();
+        $tasks = Task::first();
+        dd($tasks->getCategory);
         return view('panel.tasks.index');
     }
 }
