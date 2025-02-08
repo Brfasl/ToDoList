@@ -18,4 +18,9 @@ class Category extends Model
 
         return $this->hasMany(Task::class, 'category_id', 'id');
     }
+    public function getUser()
+    {
+
+        return $this->belongsTo(User::class, 'category_id', 'id');
+    }
 }
