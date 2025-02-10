@@ -40,7 +40,7 @@ class TaskController extends Controller
 
         $tasks = Task::first();
         $kategori = $tasks->getCategory;
-        dd($kategori);
+        dd($kategori->getUser);
         return view('panel.tasks.index');
     }
 }
