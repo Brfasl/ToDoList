@@ -58,4 +58,13 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function getTasks(){
+        return $this->hasManyThrough(Task::class,Category::class,'user_id','category_id');
+
+    }
+    public function getCategory(){
+        return $this->hasMany(Category::class,'user_id','id');
+    }
 }
+

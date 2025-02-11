@@ -3,14 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class CategoryController extends Controller
 {
-    public function index(){
+    public function index()
+    {
 
-        $categories = Category::where('user_id', Auth::id())->get();
+       // $categories = Category::where('user_id', Auth::id())->get();
+        $categories = Auth::user()->getCategory;
 
         return view('panel.categories.index',compact('categories'));
 

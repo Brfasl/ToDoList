@@ -33,6 +33,21 @@
 
             <div class="card-body">
                 <div class="card">
+                    <table>
+                        <thead>
+
+                        </thead>
+
+                        <tbody>
+                        @foreach($tasks as $t)
+                            <tr>
+                                <td>
+                                    {{$t->content}}
+                                </td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
 
             </div>
         </div>

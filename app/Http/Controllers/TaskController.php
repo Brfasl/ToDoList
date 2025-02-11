@@ -38,9 +38,10 @@ class TaskController extends Controller
     }
     public function indexPage(){
 
-        $tasks = Task::first();
-        $kategori = $tasks->getCategory;
-        dd($kategori->getUser);
-        return view('panel.tasks.index');
+        //$tasks = Task::first();
+        $user=Auth::user();
+        $tasks=$user->getTasks;
+
+        return view('panel.tasks.index',compact('tasks'));
     }
 }
