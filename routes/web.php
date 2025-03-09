@@ -16,13 +16,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-//test routes
-Route::get('/test', function () {
     return view('panel.layout.app');
 });
+
+
 
 //task routeları start
 Route::get('/panel/tasks/create',[TaskController::class ,'createPage'])->name('panel.createTaskPage');
