@@ -19,9 +19,10 @@ class RedirectIfAuthenticated
     {
         $guards = empty($guards) ? [null] : $guards;
 
+        // Kullanıcı giriş yaptıysa task sayfasına yönlendirme
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
-                return redirect(RouteServiceProvider::HOME);
+                return redirect()->route('panel.indexTask'); // Burada task sayfasına yönlendirme yapıyoruz.
             }
         }
 

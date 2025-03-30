@@ -17,7 +17,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/dashboard';
+    public const HOME = '/panel/tasks/index'; // Kullanıcı giriş yaptıktan sonra bu sayfaya yönlendirilecek
 
     /**
      * Define your route model bindings, pattern filters, and other route configuration.

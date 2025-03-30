@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;  // Auth sınıfını dahil et
 
 /*
 |--------------------------------------------------------------------------
@@ -15,38 +16,33 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Eğer kullanıcı giriş yapmamışsa, giriş sayfasına yönlendirilir
 Route::get('/', function () {
-    return view('panel.layout.app');
+    return Auth::check() ? redirect()->route('panel.indexTask') : view('auth.login');
 });
 
+// Task rotaları
+Route::get('/panel/tasks/create', [TaskController::class, 'createPage'])->name('panel.createTaskPage');
+Route::post('/panel/tasks/add', [TaskController::class, 'addTask'])->name('panel.addTask');
+Route::get('/panel/tasks/index', [TaskController::class, 'indexPage'])->name('panel.indexTask');
 
+// Kategori rotaları
+Route::get('panel/categories/index', [CategoryController::class, 'index'])->name('panel.categoryIndex');
+Route::get('panel/categories/createPage', [CategoryController::class, 'createPage'])->name('panel.categoryCreatePage');
+Route::post('panel/categories/addCategory', [CategoryController::class, 'postCategory'])->name('panel.categoryAdd');
+Route::get('panel/categories/update/{id}', [CategoryController::class, 'updatePage'])->name('panel.categoryUpdatePage');
+Route::post('panel/categories/updatePost', [CategoryController::class, 'updateCategory'])->name('panel.updateCategory');
+Route::post('panel/categories/updatePostTest/{id}', [CategoryController::class, 'updateCategoryTest'])->name('panel.updateCategoryTest');
+Route::get('panel/categories/deleteCategory/{id}', [CategoryController::class, 'categoryDelete'])->name('panel.categoryDelete');
 
-//task routeları start
-Route::get('/panel/tasks/create',[TaskController::class ,'createPage'])->name('panel.createTaskPage');
-Route::post('/panel/tasks/add',[TaskController::class ,'addTask'])->name('panel.addTask');
-Route::get('/panel/tasks/index',[TaskController::class ,'indexPage'])->name('panel.indexTask');
-
-    //task routeları end
-
-//kategori routes start
-Route::get('panel/categories/index',[CategoryController::class,'index'])->name('panel.categoryIndex');
-Route::get('panel/categories/createPage',[CategoryController::class,'createPage'])->name('panel.categoryCreatePage');
-Route::post('panel/categories/addCategory',[CategoryController::class,'postCategory'])->name('panel.categoryAdd');
-Route::get('panel/categories/update/{id}',[CategoryController::class, 'updatePage'])->name('panel.categoryUpdatePage');//slug
-Route::post('panel/categories/updatePost',[CategoryController::class, 'updateCategory'])->name('panel.updateCategory');
-
-//parametreli form post
-Route::post('panel/categories/updatePostTest/{id}',[CategoryController::class, 'updateCategoryTest'])->name('panel.updateCategoryTest');
-
-Route::get('panel/categories/deleteCategory/{id}',[CategoryController::class, 'categoryDelete'])->name('panel.categoryDelete');
-//kategori routes end
-
+// Giriş yaptıktan sonra yönlendirme
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
+    // Giriş yaptıktan sonra doğrudan tasks sayfasına yönlendir
     Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+        return redirect()->route('panel.indexTask');
+    });
 });

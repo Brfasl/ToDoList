@@ -36,8 +36,8 @@
 
             <label for="">Kategori Durumu :</label>
             <select name="catStatus" id="" class="form-control">
-            <option value="1" @if($category->is_active==1)selected @endif>Aktif</option>
-            <option value="0" @if($category->is_active==0)selected @endif>Pasif</option>
+                <option value="1" @if($category->is_active==1)selected @endif>Aktif</option>
+                <option value="0" @if($category->is_active==0)selected @endif>Pasif</option>
 
             </select>
 

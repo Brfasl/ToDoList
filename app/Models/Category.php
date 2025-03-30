@@ -8,19 +8,24 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Category extends Model
 {
-    use HasFactory,SoftDeletes;
+    use HasFactory, SoftDeletes;
 
     protected $table = 'categories';
 
+    protected $fillable = [
+        'user_id',
+        'name',
+        'is_active'
+    ];
 
-    public function getTask()
-    {
 
-        return $this->hasMany(Task::class, 'category_id', 'id');
+    public function getTask(){
+        return $this->hasMany(Task::class,'category_id','id');
     }
-    public function getUser()
-    {
 
-        return $this->belongsTo(User::class, 'category_id', 'id');
+
+    public function getUser(){
+        return $this->belongsTo(User::class,'user_id','id');
     }
+
 }

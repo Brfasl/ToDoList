@@ -42,15 +42,6 @@ class User extends Authenticatable
     ];
 
     /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
-
-    /**
      * The accessors to append to the model's array form.
      *
      * @var array<int, string>
@@ -59,12 +50,25 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
+    /**
+     * Get the attributes that should be cast.
+     *
+     * @return array<string, string>
+     */
+    protected function casts(): array
+    {
+        return [
+            'email_verified_at' => 'datetime',
+            'password' => 'hashed',
+        ];
+    }
+
+
     public function getTasks(){
         return $this->hasManyThrough(Task::class,Category::class,'user_id','category_id');
-
     }
+
     public function getCategory(){
         return $this->hasMany(Category::class,'user_id','id');
     }
 }
-
