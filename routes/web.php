@@ -21,6 +21,8 @@ Route::get('/', function () {
     return Auth::check() ? redirect()->route('panel.indexTask') : view('auth.login');
 });
 
+
+
 // Task rotaları
 Route::get('/panel/tasks/create', [TaskController::class, 'createPage'])->name('panel.createTaskPage');
 Route::post('/panel/tasks/add', [TaskController::class, 'addTask'])->name('panel.addTask');
