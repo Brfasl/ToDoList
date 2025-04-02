@@ -28,7 +28,7 @@ class TaskController extends Controller
         $task =new Task();
         $task->category_id= $req->category;
         $task->title = $req->title;
-        $task->content = $req->content;
+        $task->content = $req->content();
         $task->status = $req->status;
         $task->deadline = $req->deadline;
         $task->save();

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;  // Auth sınıfını dahil et
@@ -20,6 +21,7 @@ use Illuminate\Support\Facades\Auth;  // Auth sınıfını dahil et
 Route::get('/', function () {
     return Auth::check() ? redirect()->route('panel.indexTask') : view('auth.login');
 });
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 
 
