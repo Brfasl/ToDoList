@@ -160,7 +160,7 @@
                 </li>
                 <!-- User interface -->
                 <li class="menu-item">
-                    <a href="javascript:void(0)" class="menu-link menu-toggle">
+                    <a href="{{ route('panel.indexTask') }}-" class="menu-link menu-toggle">
                         <i class="menu-icon tf-icons bx bx-box"></i>
                         <div data-i18n="User interface">Tasklar</div>
                     </a>
