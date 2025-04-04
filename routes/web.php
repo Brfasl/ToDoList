@@ -18,10 +18,14 @@ use Illuminate\Support\Facades\Auth;  // Auth sınıfını dahil et
 */
 
 // Eğer kullanıcı giriş yapmamışsa, giriş sayfasına yönlendirilir
-Route::get('/', function () {
-    return Auth::check() ? redirect()->route('panel.indexTask') : view('auth.login');
-});
+//Route::get('/', function () {
+//    return Auth::check() ? redirect()->route('panel.indexTask') : view('auth.login');
+//});
+//Route::get('/', [HomeController::class, 'index'])->name('home');
+
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
+
 
 
 

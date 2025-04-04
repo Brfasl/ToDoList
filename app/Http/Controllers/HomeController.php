@@ -22,4 +22,7 @@ class HomeController extends Controller
 
         return view('panel.home', compact('categories', 'tasks'));
     }
+
+
+
 }
