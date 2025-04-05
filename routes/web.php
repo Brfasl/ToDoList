@@ -23,7 +23,11 @@ use Illuminate\Support\Facades\Auth;  // Auth sınıfını dahil et
 //});
 //Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+
+
+Route::get('/', function () {
+    return view('panel.home'); // home.blade.php dosyasını çağırıyor
+})->name('home');
 
 
 
