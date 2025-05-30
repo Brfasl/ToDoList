@@ -1,7 +1,8 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\HomeController;
+
+use App\Http\Controllers\Controller;
 use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;  // Auth sınıfını dahil et
@@ -25,7 +26,7 @@ use Illuminate\Support\Facades\Auth;  // Auth sınıfını dahil et
 
 
 
-Route::get('/', HomeController::class,'index');
+Route::get('/categories', [CategoryController::class, 'index']);
 
 
 
