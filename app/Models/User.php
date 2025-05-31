@@ -64,11 +64,26 @@ class User extends Authenticatable
     }
 
 
-    public function getTasks(){
-        return $this->hasManyThrough(Task::class,Category::class,'user_id','category_id');
+    public function getTasks()
+    {
+        return $this->hasManyThrough(
+            Task::class,        // Uzak model (Task)
+            Category::class,    // Aradaki model (Category)
+            'user_id',          // Category tablosundaki foreign key (user_id)
+            'category_id',      // Task tablosundaki foreign key (category_id)
+            'id',               // User tablosundaki local key (id)
+            'id'                // Category tablosundaki local key (id)
+        );
     }
 
-    public function getCategory(){
-        return $this->hasMany(Category::class,'user_id','id');
+
+    public function getCategory()
+    {
+        return $this->hasMany(
+            Category::class,
+            'user_id',  // Category tablosundaki foreign key
+            'id'        // User tablosundaki local key
+        );
     }
+
 }

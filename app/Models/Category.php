@@ -19,6 +19,11 @@ class Category extends Model
     ];
 
 
+    public function user()
+    {
+        return $this->getUser();
+    }
+
     public function getTask(){
         return $this->hasMany(Task::class,'category_id','id');
     }
