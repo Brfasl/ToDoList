@@ -14,8 +14,10 @@ return new class extends Migration
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('title')->nullable();
-            $table->string('content');
+            $table->text('content');
             $table->tinyInteger('status')->default(0)->comment('0-yapılmadı 1-yapılıyor 2-ertelendi 3-iptal oldu');
             $table->dateTime('deadline')->nullable();
             $table->softDeletes();

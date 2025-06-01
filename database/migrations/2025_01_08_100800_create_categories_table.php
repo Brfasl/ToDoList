@@ -13,14 +13,15 @@ return new class extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
+
+            // Laravel'in önerdiği şekilde foreignId + constrained
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+
             $table->string('name');
-            $table->boolean('is_active')->default(1)-> comment('0-inaktif, 1-aktif');
+            $table->boolean('is_active')->default(1)->comment('0-inaktif, 1-aktif');
+
             $table->softDeletes();
             $table->timestamps();
-
-
-            $table->foreign('user_id')->on('users')->references('id');
         });
     }
 
