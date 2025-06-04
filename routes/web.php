@@ -24,9 +24,16 @@ use Illuminate\Support\Facades\Auth;  // Auth sınıfını dahil et
 //});
 //Route::get('/', [HomeController::class, 'index'])->name('home');
 
+Route::get('/', function () {
+    return Auth::check()
+        ? redirect()->route('panel.indexTask') // giriş yaptıysa görev listesine yönlendir
+        : redirect('/login'); // Jetstream varsa giriş sayfası
+});
 
+Route::get('/home', function () {
+    return redirect()->route('panel.indexTask');
+})->name('home');
 
-Route::get('/categories', [CategoryController::class, 'index']);
 
 
 
